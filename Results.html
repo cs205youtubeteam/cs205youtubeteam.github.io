@@ -22,17 +22,17 @@
 </head>
 
 <body>
-  <div class="row">
-    <div class="column">
-      <img src="img/batch_sizes.jpg" height=460 width=678>
-    </div>
-    <div class="column">
-      <img src="img/param_modes.png" height=460 width=678>
-    </div>
-  </div>
   <div class="menu-container"></div>
   <div class="content-container">
     <div class="content">
+      <div class="row">
+        <div class="column">
+          <img src="img/batch_sizes.jpg" height=460 width=678>
+        </div>
+        <div class="column">
+          <img src="img/param_modes.png" height=460 width=678>
+        </div>
+      </div>
       <div class="content-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
@@ -43,7 +43,7 @@
           </div>
 
           <div class="flex-item flex-column">
-            In Table 2 we provide explanations of the different parameter communication schemes we tested. Both methods
+            <br/>In Table 2 we provide explanations of the different parameter communication schemes we tested. Both methods
             are asynchronous ("async") meaning that a worker does not wait for the others to be done before proceeding.
             Each worker simply requests the latest parameters from the parameter server and proceeds. The important
             distinction is between "batch" and "epoch". Batch indicates that the frequency of the parameter updates
@@ -55,10 +55,9 @@
           <img class="image" src="img/speedup.png">
 
           <div class="flex-item flex-column">
-            We ran all our experiments with 1 master node and n=1,2,4,8,15 worker nodes (we could not increase any
+            <br/>We ran all our experiments with 1 master node and n=1,2,4,8,15 worker nodes (we could not increase any
             further due to a restriction of 16 total instances from AWS). To see the command-line arguments we used
-            with spark-submit we invite you to read
-            <a href="https://github.com/filip-michalsky/cs205_spring19_final_project#memory-issues">this.</a>
+            with spark-submit we invite you to read <a href="https://github.com/filip-michalsky/cs205_spring19_final_project#memory-issues">this.</a>
             We see that in epoch-async mode our application achieves very good (superlinear) scaling, surpassing the
             ideal speedup (likely because Spark with n=1 induces large overhead compared to an optimized sequential code,
             which we did not run). We see that batch-async, however, performs very poorly with n>2.
