@@ -25,25 +25,26 @@
   <div class="menu-container"></div>
   <div class="content-container">
     <div class="content">
+      <div class="row">
+        <div class="column">
+          <img src="img/batch_sizes.jpg" height=460 width=678>
+        </div>
+        <div class="column">
+          <img src="img/param_modes.png" height=460 width=678>
+        </div>
+      </div>
       <div class="content-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
             The first thing we did was run our baseline version with a single worker node (n=1) and proceeded
             to test different batch sizes to determine which size was fastest on a single node. We then used
-            this batch size going forward as we scaled the cluster.
-          </div>
-          <img class="image" src="img/batch_sizes.png" height=460 width=678 flex-shrink: 0></img>
-          <div class="flex-item flex-column">
-            As you can see, batch size of 32 performed the best.
+            this batch size going forward as we scaled the cluster. As you can see in Table 1, batch size of 32 performed
+            the best.
           </div>
 
           <div class="flex-item flex-column">
-            Below we provide explanations of the different parameter communication schemes we tested.
-          </div>
-          <img class="image" src="img/param_modes.png" height=460 width=678></img>
-          <div class="flex-item flex-column">
-            Both methods are asynchronous ("async") meaning that a worker does not wait for the others to be done
-            before proceeding.
+            In Table 2 we provide explanations of the different parameter communication schemes we tested. Both methods
+            are asynchronous ("async") meaning that a worker does not wait for the others to be done before proceeding.
             Each worker simply requests the latest parameters from the parameter server and proceeds. The important
             distinction is between "batch" and "epoch". Batch indicates that the frequency of the parameter updates
             occurs on each batch of data, whereas epoch indicates that the parameter updates happen only every epoch
