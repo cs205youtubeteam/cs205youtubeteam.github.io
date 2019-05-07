@@ -26,7 +26,6 @@
   <div class="content-container">
     <div class="content">
       <div class="content-table flex-column">
-        <!--Start Intro-->
         <div class="flex-row">
           <div class="flex-item flex-column">
             <p class="text add-top-margin">
@@ -35,11 +34,15 @@
               In 2016, Google released a dataset of 8 million YouTube videos, each one labeled according to 4,800 unique video-level categories. This dataset is the largest labeled video dataset currently available by a significant margin. 
 
               Processing and analyzing this dataset is both extremely data-intensive and computationally-intensive. In this project, we aimed to develop a parallel architecture for training and deploying a neural network capable of accurately classifying videos in the YouTube-8M dataset.
+            
+              The computational challenges of handling and processing large-scale video datasets are currently the biggest barrier to developing accurate, reliable video classification systems. YouTube’s 8M dataset encompasses 0.5 million hours of video, 1.9 billion frame features, 4,800 classes, and amounts to 1.5 Terabytes of data – far larger than can be stored or processed on any individual machine. 
+
+              Our goal in this project was to develop a classification system capable of running in-parallel training in order to quickly and accurately classify the YouTube-8M dataset. We originally chose as our classification system a bi-directional Long Short-term Memory (LSTM) recurrent neural network (RNN), but due to the many customization steps necessary we settled on a simpler feedforward neural network. 
+
+              Our goal in developing a parallel deep learning architecture was to reduce the time necessary to train the model  to hours or even minutes. 
             </p>
           </div>
         </div>
-        <!--End Intro-->
-   
       </div>
     </div>
   </div>
