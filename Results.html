@@ -31,12 +31,12 @@
             The first thing we did was run our baseline version with a single worker node (n=1) and proceeded
             to test different batch sizes to determine which size was fastest on a single node. We then used
             this batch size going forward as we scaled the cluster.
-          <img class="image" src="img/batch_sizes.png" height=460 width=678></img>
+          <img class="image" src="img/batch_sizes.png" height=200 width=295></img>
             As you can see, batch size of 32 performed the best.<br/>
           </div>
           <div class="flex-item flex-column">
             Below we provide explanations of the different parameter communication schemes we tested.
-          <img class="image" src="img/param_modes.png" height=460 width=678></img>
+          <img class="image" src="img/param_modes.png" height=200 width=295></img>
             Both methods are asynchronous ("async") meaning that a worker does not wait for the others to be done
             before proceeding.
             Each worker simply requests the latest parameters from the parameter server and proceeds. The important
