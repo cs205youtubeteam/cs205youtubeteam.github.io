@@ -31,21 +31,21 @@
             The first thing we did was run our baseline version with a single worker node (n=1) and proceeded
             to test different batch sizes to determine which size was fastest on a single node. We then used
             this batch size going forward as we scaled the cluster.
-            <img class="image" src="img/batch_sizes.png">
+            <img class="image" src="img/batch_sizes.png" height=460 width=678>
             As you can see, batch size of 32 performed the best.
           </div>
           <div class="flex-item flex-column">
-            <img class="image" src="img/param_modes.png">
-            Above we provide explanations of the different parameter communication schemes we tested. Both methods
+            Below we provide explanations of the different parameter communication schemes we tested. Both methods
             are asynchronous ("async") meaning that a worker does not wait for the others to be done before proceeding.
             Each worker simply requests the latest parameters from the parameter server and proceeds. The important
             distinction is between "batch" and "epoch". Batch indicates that the frequency of the parameter updates
             occurs on each batch of data, whereas epoch indicates that the parameter updates happen only every epoch
             (an epoch is just a sequence of batches). As such, the computation to communication ratio is much higher
             in the latter "epoch-async" method, while the communication is much more dominant in "batch-async".
+            <img class="image" src="img/param_modes.png" height=460 width=678>
           </div>
           <div class="flex-item flex-column">
-            <img class="image" src="img/results.png">
+            <img class="image" src="img/speedup.png">
             We see that in epoch-async mode our application achieves very good (superlinear) scaling, surpassing the
             ideal speedup (likely because Spark with n=1 induces large overhead compared to an optimized sequential code,
             which we did not run). We see that batch-async, however, performs very poorly with n>2.
