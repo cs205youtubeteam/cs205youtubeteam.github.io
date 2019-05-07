@@ -50,27 +50,26 @@
               sitting atop Hadoop YARN and enabled by Elephas: a library that enables training Tensorflow models
               in Spark. The infrastructure used consists of a custom cluster of m4.xlarge instances on AWS using Amazon
               Machine Images to spin-up nodes with the correct software dependencies. We found this approach produced
-              reliable systemic speedup and effective classification with our final model.
-            </p>
-            <p class="text add-top-margin">
-            We have learned many lessons through this project, especially in provisioning our custom Elastic Map Reduce
-            cluster, as well as in building various software dependencies: Tensorflow-Spark connector for reading
-            TFRecord files, Amazon-flavored Linux, Apache Maven, and getting all of our various components to be
-            version-compatible (e.g. Scala, Java versions with PySpark, Tensorflow-Spark and Amazon Linux versions).
-            We faced many issues in provisioning the cluster as a result of the growing complexity that so many software
-            dependencies adds to the problem, especially when there are non-backward-compatible components (e.g. PySpark
-            with Scala).
+              reliable systemic speedup and effective classification with our final model.<br/><br/>
 
-            In the future, we would recommend not using Amazon Machine Images (AMIs) for provisioning, and instead bundling
-            the Python-based dependencies into jar files (a method which we found was possible only after the fact). This
-            would certainly save much time as there are many specific "gotchas" that are required for tackling the AMI
-            method successfully (EBS volume configuration, must be Amazon Linux, etc.). On the positive side, we found that
-            asynchronous weight updates can be parallelized highly effectively, and we actually achieved superlinear speedup
-            with this  method. Future work may involve training more complex models (e.g. multiple input models), or
-            implementing alternative parallel Stochastic Gradient Descent schemes (e.g. Baidu's proposed Ring AllReduce).
+              We have learned many lessons through this project, especially in provisioning our custom Elastic Map Reduce
+              cluster, as well as in building various software dependencies: Tensorflow-Spark connector for reading
+              TFRecord files, Amazon-flavored Linux, Apache Maven, and getting all of our various components to be
+              version-compatible (e.g. Scala, Java versions with PySpark, Tensorflow-Spark and Amazon Linux versions).
+              We faced many issues in provisioning the cluster as a result of the growing complexity that so many software
+              dependencies adds to the problem, especially when there are non-backward-compatible components (e.g. PySpark
+              with Scala).<br/><br/>
 
-            We hope that you can learn from our work and the particular method we employed to deploy Tensorflow model training
-            on a massive dataset by utilizing Spark sitting atop a Hadoop-based elastic cluster.
+              In the future, we would recommend not using Amazon Machine Images (AMIs) for provisioning, and instead bundling
+              the Python-based dependencies into jar files (a method which we found was possible only after the fact). This
+              would certainly save much time as there are many specific "gotchas" that are required for tackling the AMI
+              method successfully (EBS volume configuration, must be Amazon Linux, etc.). On the positive side, we found that
+              asynchronous weight updates can be parallelized highly effectively, and we actually achieved superlinear speedup
+              with this  method. Future work may involve training more complex models (e.g. multiple input models), or
+              implementing alternative parallel Stochastic Gradient Descent schemes (e.g. Baidu's proposed Ring AllReduce).<br/><br/>
+
+              We hope that you can learn from our work and the particular method we employed to deploy Tensorflow model training
+              on a massive dataset by utilizing Spark sitting atop a Hadoop-based elastic cluster.<br/><br/>
             </p>
           </div>
         </div>
