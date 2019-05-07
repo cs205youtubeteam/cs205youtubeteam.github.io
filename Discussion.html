@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Project Title</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <div class="content">
+      <div class="content-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+          Challenges: Our primary challenge was getting the various software dependencies to work well with each other:
+          The installation of Elephas uses a version of PySpark which is incompatible with Scala on the EMR, and we had to manually install a compatible version.
+          To be able to launch AMIs on EMR, the AMI must be created from a compatible Amazon Linux EC2 instance. It took much trial and error to properly provision the AMI and EMR.
+          The amount of data is very large and mounting it on HDFS took very long, so we instead used a 30GB subset as an example, and left it to future work to expand to the full 1.5TB. Additionally, TFRecords is not natively supported on Spark and we had to install Apache Maven and a Tensorflow-Spark connector.
+
+          Overheads: The main overhead was the communication of parameters from worker nodes to master node. Secondary to this was the launching of the Spark application across the cluster, which plays a small role in runtime.
+          </div>
+          <div class="flex-item flex-column">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
