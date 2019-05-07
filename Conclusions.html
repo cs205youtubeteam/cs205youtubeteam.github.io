@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Project Title</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <div class="content">
+      <div class="content-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+          Big Data Machine Learning poses many additional challenges not encountered in traditional-scale ML such as I/O and serial compute bottleneck as well as memory and cache management when handling large datasets. We have tackled many of the distributed machine learning challenges in this project. We deployed an elastic Hadoop YARN cluster with Spark to achieve efficient scaling and lower execution time while maintaining similar accuracy.
+
+          The primary area for improvement we suggest is to reduce the communication overhead by more efficiently communicating model parameters. Currently we run a Flask server on the master node, but many other methods such as MPI ring-AllReduce have been proposed.4 Further improvements include adjustment of the Elephas package to include multi-level model inputs allowing us to train a bi-LSTM with frame-level pixel and audio features. Additionally, to achieve higher accuracy, it will be helpful to utilize more feature channels and the full version (1.5TB) of this dataset.
+          </div>
+          <div class="flex-item flex-column">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
