@@ -1,0 +1,5 @@
+The analysis and classification of video data is an active area of machine learning research. Computational efforts to analyze and classify visual information (including video data) typically rely on Convolutional Neural Networks (CNNs), a type of deep neural net. Convolutional Neural Nets (CNNs) require very large amounts of data to adequately train. The absence of very large, labeled video datasets has been a barrier to developing accurate CNNs for processing video (as opposed to static image) data. 
+
+In 2016, Google released a dataset of 8 million YouTube videos, each one labeled according to 4,800 unique video-level categories. This dataset is the largest labeled video dataset currently available by a significant margin. 
+
+Processing and analyzing this dataset is both extremely data-intensive and computationally-intensive. In this project, we aimed to develop a parallel architecture for training and deploying a neural network capable of accurately classifying videos in the YouTube-8M dataset.
