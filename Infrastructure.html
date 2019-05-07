@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Project Title</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <div class="content">
+      <div class="content-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            We turned to a parallel architecture to address challenges relating to both Big Data and Big Compute. 
+
+            We used Spark to partition and distribute the 1.5 TB YouTube 8M dataset on a Hadoop Distributed Filesystem (HDFS), as well as to handle the communication between nodes. We used the deep learning library Tensorflow to train our model. We deployed multiple Amazon Web Services (AWS) Elastic Map Reduce (EMR) m4.xlarge instances to construct our cluster.
+
+            We initially mounted an S3 bucket as a drive on the local filesystem, and then distributed our data with HDFS. However, we found that it was easier and faster to simply point Spark directly to the S3 bucket. We used the Tensorflow-Spark Connector library which can load tfrecords into Spark DataFrames. We built an Amazon Machine Image (AMI) that included installations of TensorFlow in conjunction with Elephas, a library for distributed ML training. We spun up the EMR cluster using this AMI to allow elastic scalability without manual installation of dependencies. We ran all experiments with a single master and n=1,2,4,8,15 workers.
+
+            Software versions:
+            Amazon Linux 2018.03.0, Python 3.6, EMR 5.32, Hadoop YARN 2.8, Spark 2.4, Scala 2.11, Java 8, Tensorflow 1.13
+          </div>
+          <div class="flex-item flex-column">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
