@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Project Title</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/menu.js"></script>
+  <style>
+    .menu-index {
+      color: rgb(255, 255, 255) !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+  <div class="content-container">
+    <div class="content">
+      <div class="content-table flex-column">
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+          <img class="image" src="img/results.png">
+          </div>
+          <div class="flex-item flex-column">
+          We see that in epoch-async mode our application achieves very good (superlinear) scaling, surpassing the ideal speedup (likely because Spark with n=1 induces large overhead compared to an optimized sequential code, which we did not run). We see that batch-async, however, performs very poorly with n>2.
+
+          We believe this is a result of growing communication overhead. Investigation into the CPU utilization of the worker nodes shows that only ~50% (of 400%) of each worker is being utilized for training. Meanwhile, when n>2, the communication server seems to be bottlenecked. We achieve roughly the same ~65-70% accuracy in all experiments.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
