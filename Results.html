@@ -31,12 +31,17 @@
             The first thing we did was run our baseline version with a single worker node (n=1) and proceeded
             to test different batch sizes to determine which size was fastest on a single node. We then used
             this batch size going forward as we scaled the cluster.
-          <img class="image" src="img/batch_sizes.png" height=200 width=295></img>
-            As you can see, batch size of 32 performed the best.<br/>
           </div>
+          <img class="image" src="img/batch_sizes.png" height=460 width=678></img>
+          <div class="flex-item flex-column">
+            As you can see, batch size of 32 performed the best.
+          </div>
+
           <div class="flex-item flex-column">
             Below we provide explanations of the different parameter communication schemes we tested.
-          <img class="image" src="img/param_modes.png" height=200 width=295></img>
+          </div>
+          <img class="image" src="img/param_modes.png" height=460 width=678></img>
+          <div class="flex-item flex-column">
             Both methods are asynchronous ("async") meaning that a worker does not wait for the others to be done
             before proceeding.
             Each worker simply requests the latest parameters from the parameter server and proceeds. The important
@@ -45,6 +50,7 @@
             (an epoch is just a sequence of batches). As such, the computation to communication ratio is much higher
             in the latter "epoch-async" method, while the communication is much more dominant in "batch-async".
           </div>
+          
           <div class="flex-item flex-column">
             We ran all our experiments with 1 master node and n=1,2,4,8,15 worker nodes (we could not increase any
             further due to a restriction of 16 total instances from AWS). To see the command-line arguments we used
