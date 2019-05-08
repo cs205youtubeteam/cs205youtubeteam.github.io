@@ -25,7 +25,7 @@
   <div class="menu-container"></div>
   <div class="content-container">
     <div class="content">
-      <div class="content-table">
+      <!-- <div class="content-table">
         <div class="row">
           <div class="column">
             <img src="img/batch_sizes.png" height=460 width=678>
@@ -34,8 +34,10 @@
             <img src="img/param_modes.png" height=460 width=678>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="content-table" "flex-column">
+        <img class="image" src="img/result_tables.png">
+
         <div class="flex-row">
           <div class="flex-item flex-column">
             The first thing we did was run our baseline version with a single worker node (n=1) and proceeded
@@ -60,10 +62,12 @@
             <br/>We ran all our experiments with 1 master node and n=1,2,4,8,15 worker nodes (we could not increase any
             further due to a restriction of 16 total instances from AWS). To see the command-line arguments we used
             with spark-submit we invite you to read <a href="https://github.com/filip-michalsky/cs205_spring19_final_project#memory-issues">this.</a>
-            We see that in epoch-async mode our application achieves very good (superlinear) scaling, surpassing the
+
+            </br>We see that in epoch-async mode our application achieves very good (superlinear) scaling, surpassing the
             ideal speedup (likely because Spark with n=1 induces large overhead compared to an optimized sequential code,
             which we did not run). We see that batch-async, however, performs very poorly with n>2.
             <br/><br/>
+
             We believe this is a result of growing communication overhead. Investigation into the CPU utilization of
             the worker nodes shows that only ~50% (of 400%) of each worker is being utilized for training. Meanwhile,
             when n>2, the communication server seems to be bottlenecked. We achieve roughly the same ~65-70% accuracy
