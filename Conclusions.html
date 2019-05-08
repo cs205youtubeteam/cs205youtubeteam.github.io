@@ -44,12 +44,12 @@
           <b>Future Work:</b>
           <br/>The primary area for improvement we suggest is to reduce the communication overhead by more efficiently communicating model parameters. Currently we run a Flask server on the master node, but many other methods such as MPI ring-AllReduce have been proposed.4 Further improvements include adjustment of the Elephas package to include multi-level model inputs allowing us to train a bi-LSTM with frame-level pixel and audio features. Additionally, to achieve higher accuracy, it will be helpful to utilize more feature channels and the full version (1.5TB) of this dataset.
           <br/><br/>
-          References:
+          <b>References:</b>
           <br/>
-          J. Dean, G.S. Corrado, R. Monga, K. Chen, M. Devin, QV. Le, MZ. Mao, M’A. Ranzato, A. Senior, P. Tucker, K. Yang, and AY. Ng. Large Scale Distributed Deep Networks.
-          <br/>F. Niu, B. Recht, C. Re, S.J. Wright HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent
-          <br/>C. Noel, S. Osindero. Dogwild! — Distributed Hogwild for CPU & GPU
-          <br/>Baidu Inc. https://github.com/baidu-research/baidu-allreduce
+          1. J. Dean, G.S. Corrado, R. Monga, K. Chen, M. Devin, QV. Le, MZ. Mao, M’A. Ranzato, A. Senior, P. Tucker, K. Yang, and AY. Ng. Large Scale Distributed Deep Networks.
+          <br/>2. F. Niu, B. Recht, C. Re, S.J. Wright HOGWILD!: A Lock-Free Approach to Parallelizing Stochastic Gradient Descent
+          <br/>3. C. Noel, S. Osindero. Dogwild! — Distributed Hogwild for CPU & GPU
+          <br/>4. Baidu Inc. https://github.com/baidu-research/baidu-allreduce
           </div>
           <div class="flex-item flex-column">
           </div>
